@@ -5,9 +5,7 @@ public class Segitiga {
 	public float luas, keliling;
 	
 //	Konstruktor
-	public Segitiga() {
-		// TODO Auto-generated constructor stub
-	}
+	public Segitiga() {}
 	
 	public Segitiga(int alas, int tinggi) {
 		this.alas = alas;

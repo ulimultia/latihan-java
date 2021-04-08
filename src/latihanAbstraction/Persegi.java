@@ -4,7 +4,7 @@ public class Persegi implements BangunDatar{
 
     @Override
     public void drawPattern() {
-        // TODO Auto-generated method stub
+        
         System.out.println("\n\n=====================================================================");
         System.out.println("PERSEGI\n");
         for(int i=1; i<=5; i++){
@@ -17,7 +17,7 @@ public class Persegi implements BangunDatar{
 
     @Override
     public void charactersPattern() {
-        // TODO Auto-generated method stub
+        
         System.out.println("\n>>> Karakteristik: ");
         System.out.println("1. Memiliki 4 buah sisi yang panjangnya sejajar");
         System.out.println("2. Rumus Luas: Sisi x Sisi");

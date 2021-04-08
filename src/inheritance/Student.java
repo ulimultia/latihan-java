@@ -6,7 +6,6 @@ public class Student extends Person2 {
 
   public Student(String fname, String lname) {
     super(fname, lname);
-    // TODO Auto-generated constructor stub
   }
 
   public int getSks() {

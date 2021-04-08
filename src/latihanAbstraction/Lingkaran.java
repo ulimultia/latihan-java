@@ -4,7 +4,7 @@ public class Lingkaran implements BangunDatar{
 
     @Override
     public void drawPattern() {
-        // TODO Auto-generated method stub
+        
         System.out.println("\n\n=====================================================================");
         System.out.println("LINGKARAN\n");
         // source : https://introcs.cs.princeton.edu/java/13flow/Circle.java.html
@@ -23,7 +23,7 @@ public class Lingkaran implements BangunDatar{
 
     @Override
     public void charactersPattern() {
-        // TODO Auto-generated method stub
+        
         System.out.println("\n>>> Karakteristik: ");
         System.out.println("1. Memiliki diameter (d) dan jari-jari/radius (r)");
         System.out.println("2. Rumus Luas: phi x r x r");

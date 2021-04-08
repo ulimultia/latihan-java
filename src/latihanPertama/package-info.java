@@ -1,3 +1,6 @@
 package latihanPertama;
 
-// berisi informasi tentang package
+/*
+    berisi latihan soal untuk cetak matrix 
+    dan main untuk tugas pertama
+*/

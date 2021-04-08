@@ -6,7 +6,7 @@ public class Segitiga implements BangunDatar{
 
     @Override
     public void drawPattern() {
-        // TODO Auto-generated method stub
+        
         System.out.println("\n\n=====================================================================");
         System.out.println("SEGITIGA\n");
         for(int i=1; i<=5; i++){
@@ -19,7 +19,7 @@ public class Segitiga implements BangunDatar{
 
     @Override
     public void charactersPattern() {
-        // TODO Auto-generated method stub
+        
         System.out.println("\n>>> Karakteristik: ");
         System.out.println("1. Memiliki 3 buah sisi, setidaknya 1 buah sisi merupakan sisi miring");
         System.err.println("2. Memiliki alas dan tinggi");
