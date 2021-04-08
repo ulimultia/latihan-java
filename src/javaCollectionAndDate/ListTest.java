@@ -1,19 +1,19 @@
 package javaCollectionAndDate;
 
-import java.lang.reflect.Array;
+// import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
+// import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public class ListTest {
     public void listTesting() {
-        String[] arr = {"Es Batu", "Air Putih"};
+        // String[] arr = {"Es Batu", "Air Putih"};
         List<String> listMakanan = new ArrayList<>();
         // membuat list sekaligus mengisi listnya dengan konstruktor bernama asList()
         List<String> listMinuman = new ArrayList<>(Arrays.asList("Es Teh", "Es Jeruk", "Air Putih", "Es Nutrisari", "jus Jambu"));
-        List<String> listMinumanTest = new ArrayList<>(Arrays.asList(arr));
+        // List<String> listMinumanTest = new ArrayList<>(Arrays.asList(arr));
 
         // menambahkan data satu persatu ke dalam list
         listMakanan.add("Mie Ayam");
