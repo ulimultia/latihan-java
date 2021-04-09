@@ -12,7 +12,7 @@ public class Person {
         this.domisili = domisili;
     }
 
-    // setter dan getter untuk kelas Person
+    // setter dan getter untuk kelas Person dengan obyek dari konstruktor kosong
     protected String getFname() {
         return fname;
     }
@@ -39,6 +39,11 @@ public class Person {
 
     // method untuk kelas Person
     protected String concatName(){
+        /*
+            methode yang digunakan untuk menyambungkan nama depan dan nama belakang
+            dibuat protected supaya hanya bisa diakses oleh keturunannya
+            atau di package yang sama
+        */
         return this.fname + " " + this.lname;
     }
     

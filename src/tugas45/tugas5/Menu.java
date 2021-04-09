@@ -6,6 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Menu extends Paket{
+    /**
+     * Kelas Menu digunakan untuk menyimpan seluruh obyek menu
+     * seperti daftar paketr, daftar makanan, dan daftar minuman.
+     * Daftar-daftar tersebut disimpan dalam Map<>
+     */
     private Map<String, Double> listMakanan = new HashMap<>();
     private Map<String, Double> listMinuman = new HashMap<>();
     private Map<Integer, Paket> listPaket = new HashMap<>();
@@ -57,7 +62,10 @@ public class Menu extends Paket{
     }
 
     public void createListPaket(){
-        // method untuk mengenerate data daftar paket
+        /**
+         *  method untuk mengenerate data daftar paket dengan membuat obyek baru dari
+         *  kelas Paket dengan kontruktor berparameter
+         */ 
         listPaket.put(1, new Paket("Paket Bebakaran A", "Ayam Bakar", "Es Teh", 14000));
         listPaket.put(2, new Paket("Paket Bebakaran B", "Lele Bakar", "Es Teh", 13000));
         listPaket.put(3, new Paket("Paket Bebakaran C", "Nila Bakar", "Es Teh", 16000));
@@ -67,6 +75,7 @@ public class Menu extends Paket{
     }
 
     public void tampilSemuaMenu(){
+        // method untuk menampilkan semua menu yang tersedia
         System.out.println("\n\n===================== DAFTAR MENU =======================");
         tampilListMakanan();
         System.out.println();
@@ -77,6 +86,7 @@ public class Menu extends Paket{
     }
 
     public void tampilListMakanan(){
+        // method yang digunakan untuk menampilkan daftar makanan saja
         int counter = 1;
         System.out.println(">>> Daftar Makanan");
         for(String element : listMakanan.keySet()){
@@ -86,6 +96,7 @@ public class Menu extends Paket{
     }
 
     public void tampilListMinuman(){
+        // method yang digunakan untuk menampilkan daftar minuman saja
         int counter = 1;
         System.out.println(">>> Daftar Minuman");
         for(String element : listMinuman.keySet()){
@@ -95,6 +106,7 @@ public class Menu extends Paket{
     }
 
     public void tampilListPaket(){
+        // method yang digunakan untuk menampilkan paket yang tersedia saja
         System.out.println(">>> Daftar Paket");
         for(Integer element : listPaket.keySet()){
             System.out.println(element + ". " + listPaket.get(element).getNamaPaket() + "\t\tRp " + listPaket.get(element).getHarga());
@@ -134,18 +146,25 @@ public class Menu extends Paket{
         for(Integer element : listPaket.keySet()){
             counter = counter + listPaket.get(element).getHarga();
         }
-        // ppn 10 %, maka harus bayar 110% = 1.1
-        return counter * 1.1;
+        return counter;
+    }
+
+    private double hitungPPN(double total){
+        // ppn 10 % = 0.1
+        return total * 0.1;
     }
 
     public void tampilNota(){
+        // method yang digunakan untuk menampilkan nota pemesanan
         System.out.println("================= NOTA ===================");
         System.out.println("Tgl: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("E, dd MMM yyyy - hh:mm")));
         tampilListMakanan();
         tampilListMinuman();
         tampilListPaket();
         System.out.println("===========================================");
-        System.out.println("TOTAL: Rp " + hitungTotalBayar());
+        System.out.println("Total Harga: Rp " + hitungTotalBayar());
+        System.out.println("PPN        : Rp " + hitungPPN(hitungTotalBayar()));
+        System.out.println("Total Bayar: Rp " + hitungTotalBayar()+ hitungPPN(hitungTotalBayar()));
         System.out.println("===========================================");
     }
 }

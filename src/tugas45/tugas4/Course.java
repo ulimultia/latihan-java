@@ -1,12 +1,20 @@
 package tugas45.tugas4;
 
 public class Course {
+    /*
+        Kelas Course ini digunakan sebagai model publik untuk membuat obyek course.
+        Kelas ini juga dibuat karena student hanya bisa mewarisi satu kelas saja,
+        dan sudah mewarisi kelas Person.
+        Selain itu, obyek dari kelas Course ini akan dibuat dalam java collection
+        sehingga java collection akan menyimpan suatu obyek.
+    */
     private String namaMatkul, namaDosen;
     private int sks;
     
-    // konstruktor
+    // konstruktor kosong
     public Course () {}
 
+    // konstruktor berparameter untuk membuat obyek baru dengan suatu masukkan dan menge-set valuenya
     public Course(String mataKuliah, String dosen, int sks){
         this.namaDosen = dosen;
         this.namaMatkul = mataKuliah;

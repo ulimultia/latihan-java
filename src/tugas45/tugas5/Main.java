@@ -10,6 +10,7 @@ public class Main {
     private static Menu daftarMenu = new Menu();
     // obyek yang menyimpan data pesanan
     private static Menu daftarPesanan = new Menu();
+    // atribut penampung dari tiap-tiap jenis daftar pesanan yang diinputkan user
     private static Map<String, Double> pesananMakanan = new HashMap<>();
     private static  Map<String, Double> pesananMinuman = new HashMap<>();
     private static  Map<Integer, Paket> pesananPaket = new HashMap<>();
@@ -19,10 +20,11 @@ public class Main {
         String tempKey = "";
         double tempValue = 0;
         Paket tempPaket = new Paket();
-        // inisialisasi awal isi data
+        // inisialisasi awal isi data tiap-tiap daftar menu
         daftarMenu.createListMakanan();
         daftarMenu.createListMinuman();
         daftarMenu.createListPaket();
+        // inisialisasi awal isi dari tiap-tiap daftar pesanan
         daftarPesanan.setListMakanan(pesananMakanan);
         daftarPesanan.setListMinuman(pesananMinuman);
         daftarPesanan.setListPaket(pesananPaket);
@@ -94,8 +96,9 @@ public class Main {
                                         break;
                                 case 4: daftarMenu.tampilListPaket();
                                         System.out.print("Pilih Makanan: "); temp = Integer.parseInt(scanner.nextLine());
-                                        // mengambil data isi paket dari daftar menu
+                                        // mengambil obyek dan isi paket dari daftar menu
                                         tempPaket = getIsiPaket(daftarMenu.getListPaket(), temp);
+                                        // memasukkan obyek yang telah diambil dari daftar menu ke daftar pesanan
                                         daftarPesanan.tambahListPaket(tempPaket);
                                         break;
                                 case 5: daftarPesanan.tampilNota(); break;
@@ -110,6 +113,7 @@ public class Main {
     }
     
     private static String getKeyName(Map<String, Double> menu, int pilihan){
+        // method yang digunakan untuk mengambil key dari Map<>
         String key="";
         int counter = 1;
         for(String element : menu.keySet()){
@@ -123,6 +127,7 @@ public class Main {
     }
 
     private static double getValueName(Map<String, Double> menu, int pilihan){
+        // method yang digunakan untuk mengambil value dari Map<>
         double value=0;
         int counter = 1;
         for(String element : menu.keySet()){
@@ -136,6 +141,7 @@ public class Main {
     }
 
     private static Paket getIsiPaket(Map<Integer, Paket> menu, int pilihan){
+        // method yang digunakan untuk mengambil value dari Map<> berupa obyek paket
         Paket temp = new Paket();
         for(Integer element : menu.keySet()){
             if(element == pilihan){

@@ -1,11 +1,18 @@
 package tugas45.tugas5;
 
 public class Paket {
+    /**
+     * Kelas Paket digunakan sebagai model parent untuk kelas keturunannya.
+     * Kelas ini menyimpan objek-objek dari Paket menu yang tersedia 
+     * Data yang disimpan dalam obyek ini yaitu, nama paket, makanan, minuman, dan harganya
+     */
     private String namaMakanan, namaMinuman, namaPaket;
     private double harga;
 
+    // konstruktor kosong
     public Paket(){}
 
+    // konstruktor berparapmeter
     public Paket(String paket, String makanan, String minuman, double harga){
         // konstruktor ini digunakan untuk mengenerate nama paket pada kelas Menu void createListPaket
         this.harga = harga;
@@ -14,6 +21,7 @@ public class Paket {
         this.namaPaket = paket;
     }
 
+    // setter dan getter
     public String getNamaMakanan() {
         return namaMakanan;
     }
@@ -38,7 +46,4 @@ public class Paket {
     public void setHarga(double harga) {
         this.harga = harga;
     }
-
-    //setter dan getter
-    
 }

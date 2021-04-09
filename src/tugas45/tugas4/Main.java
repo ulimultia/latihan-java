@@ -6,9 +6,11 @@ import static java.util.Objects.isNull;
 import java.util.Map;
 
 public class Main {
+    // variable untuk input (scanner)
     private static Scanner scanner = new Scanner(System.in);
     
     public static void main(String[] args) {
+        // membuat obyek baru bertipe interface yang diperoleh dari kelas Student
         StudentInterface student = new Student();
         int menu;
 
@@ -24,9 +26,15 @@ public class Main {
             System.out.println("=======================================================");
             System.out.print("Pilih menu: "); menu = Integer.parseInt(scanner.nextLine());
             switch(menu){
-                case 1: inputStudent(student); break;
-                case 2: CourseIntreface courseIntreface = new Student();
+                case 1: // memanggil method untuk input data personal Student
+                        inputStudent(student); 
+                        break;
+                case 2: // membuat interface bertipe course interface dari kelas Student
+                        CourseIntreface courseIntreface = new Student();
+                        // membuat atribut daftar mata kuliah bertipe Map<> yang diambil dari implemetasi
+                        // method dari kelas interface Courser pada kelas Student
                         Map<Integer, Course> courseMap = courseIntreface.createCourseMap();
+                        // menginputkan daftar mata kuliah yang diambil
                         inputSKS(student, courseIntreface, courseMap);
                         break;
                 case 3: student.showDetailStudent(); break;
